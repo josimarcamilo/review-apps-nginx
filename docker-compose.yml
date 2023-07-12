@@ -1,0 +1,16 @@
+version: '3.1'
+
+networks:
+  teste:
+
+services:
+
+  app:
+    image: nginx
+    ports:
+      - "8090:80"
+    volumes:
+      - ./site:/var/site
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+        - teste
